@@ -7,12 +7,30 @@ buttons.forEach(button => {
     button.addEventListener('click', function() {
         //Check if operator is selected
         if (this.classList.contains("btn-operator")) {
-            console.log("operator selected");
             let operator = this.textContent;
+            console.log(operator);
 
             if (operator === '+') {
                 console.log("Sum");
             }
+
+            else if (operator === '-') {
+                console.log('Difference');
+            }
+            else if (operator === 'x') {
+                console.log('Multiply');
+            }
+            else if (operator === '/'){
+                console.log('Dvision');
+            }
+            else if (operator === '=') {
+                console.log('Equals');
+            }
+            else if (operator === 'C') {
+                console.log('Clear');
+            }
+            
+
         }
         else {
             // Access specific properties of the clicked button
