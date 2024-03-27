@@ -1,6 +1,8 @@
 // Get all buttons
 const buttons = document.querySelectorAll('.buttons button');
-let display = document.querySelector('.display')
+let display = document.querySelector('.display');
+let equation = '';
+let result = 0;
 
 // Loop through each button and attach onclick event listener
 buttons.forEach(button => {
@@ -8,35 +10,39 @@ buttons.forEach(button => {
         //Check if operator is selected
         if (this.classList.contains("btn-operator")) {
             let operator = this.textContent;
-            console.log(operator);
 
-            if (operator === '+') {
-                console.log("Sum");
+            //check if the operator is an arithmetic 
+            if (operator === '+' || operator === '-' || operator === '*' || operator === '/') {
+                equation += operator;
+                display.textContent = '';
             }
 
-            else if (operator === '-') {
-                console.log('Difference');
-            }
-            else if (operator === 'x') {
-                console.log('Multiply');
-            }
-            else if (operator === '/'){
-                console.log('Dvision');
-            }
+            //if operator is equals
             else if (operator === '=') {
-                console.log('Equals');
-            }
-            else if (operator === 'C') {
-                console.log('Clear');
-            }
-            
 
+                //evaluate the function
+                result = eval(equation);
+
+                //add the result to the display box
+                display.textContent = result;
+            }
+
+            //check if operator is C (Clear)
+            else if (operator === 'C') {
+                
+                //erase the equation and clear display text
+                equation = '';
+                display.textContent = '';
+            }
         }
         else {
             // Access specific properties of the clicked button
             const buttonText = this.textContent;
-            
-            //Store values selected
+
+            //append numbers onto the equation
+            equation += buttonText;
+
+            //Display the current numerical value in the display
             display.textContent += buttonText;
         }
     });
