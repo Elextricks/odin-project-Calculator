@@ -31,8 +31,7 @@ buttons.forEach(button => {
                 }
                 //if number is not whole, display number and round to nearest hundreth
                 else {
-                    roundedResult = result.toFixed(2);
-                    display.textContent = roundedResult;
+                    display.textContent = result.toFixed(2);
                 }                
             }
 
