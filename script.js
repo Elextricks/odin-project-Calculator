@@ -1,6 +1,7 @@
 // Get all buttons
 const buttons = document.querySelectorAll('.buttons button');
-let display = document.querySelector('.display');
+let display = document.querySelector('.main');
+let secondary = document.querySelector('.secondary');
 let equation = '';
 let result = 0;
 
@@ -15,6 +16,7 @@ buttons.forEach(button => {
             if (operator === '+' || operator === '-' || operator === '*' || operator === '/') {
                 equation += operator;
                 display.textContent = '';
+                secondary.textContent = equation;
             }
 
             //if operator is equals
@@ -33,6 +35,8 @@ buttons.forEach(button => {
                 //erase the equation and clear display text
                 equation = '';
                 display.textContent = '';
+                
+                secondary.textContent = '';
             }
         }
         else {
@@ -44,6 +48,8 @@ buttons.forEach(button => {
 
             //Display the current numerical value in the display
             display.textContent += buttonText;
+
+            secondary.textContent = equation;
         }
     });
 });
