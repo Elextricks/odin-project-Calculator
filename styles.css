@@ -11,7 +11,6 @@
     font-size: 48px;
     display: flex;
     flex-direction: column;
-
 }
 
 .buttons{
@@ -26,6 +25,12 @@
     font-size: 14px;
 }
 
+.main {
+    display: flex;
+    justify-content: flex-end;
+}
+
 button{
     flex: 1 25%;
   } 
+
