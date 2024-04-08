@@ -25,8 +25,15 @@ buttons.forEach(button => {
                 //evaluate the function
                 result = eval(equation);
 
-                //add the result to the display box
-                display.textContent = result;
+                //Check if number is a whole number, if so display number
+                if (result % 1 == 0) {
+                    display.textContent = result
+                }
+                //if number is not whole, display number and round to nearest hundreth
+                else {
+                    roundedResult = result.toFixed(2);
+                    display.textContent = roundedResult;
+                }                
             }
 
             //check if operator is C (Clear)

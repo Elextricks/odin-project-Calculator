@@ -23,6 +23,7 @@
     display: flex;
     justify-content: flex-end;
     font-size: 14px;
+    padding: 4px;
 }
 
 .main {
@@ -33,5 +34,3 @@
 button{
     flex: 1 25%;
   } 
-
-/*Test*/
