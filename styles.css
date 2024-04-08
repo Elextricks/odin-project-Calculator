@@ -4,31 +4,32 @@
     margin: auto;
 }
 
-.display{
-    width: 100%;
-    background-color: darkGrey;
-    height: 75px;
-    font-size: 48px;
+.main {
     display: flex;
-    flex-direction: column;
-}
+    justify-content: flex-end;
 
-.buttons{
-    max-width: 400px;
-    display:flex;
-    flex-wrap: wrap;
 }
 
 .secondary {
     display: flex;
     justify-content: flex-end;
     font-size: 14px;
-    padding: 4px;
+    padding: 2px;
 }
 
-.main {
+.display{
+    background-color: darkGrey;
+    height: 75px;
+    font-size: 48px;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.buttons{
+    max-width: 400px;
+    display:flex;
+    flex-wrap: wrap;
 }
 
 button{
