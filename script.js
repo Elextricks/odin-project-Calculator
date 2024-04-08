@@ -25,9 +25,12 @@ buttons.forEach(button => {
 
 document.body.addEventListener("keydown", (ev) => {
     console.log(ev.key);
+    // Check if a number is pressed
     if (!isNaN(parseInt(ev.key))) {
         performNumber(ev.key);
     }
+
+    // Check if a operator is pressed and verify it exists in the operatorsArray
     else if (operatorsArray.includes(ev.key)){
         performOperations(ev.key);
     }
@@ -43,17 +46,22 @@ function performOperations(operator) {
 
     //if operator is equals
     else if (operator === '=' || operator === 'Enter') {
-
         //evaluate the function
         result = eval(equation);
 
         //Check if number is a whole number, if so display number
         if (result % 1 == 0) {
             display.textContent = result
+            equation = result
+        }
+        //Check if user is trying to divide by 0
+        else if (result === Infinity) {
+            display.textContent = "Unable to divide";
         }
         //if number is not whole, display number and round to nearest hundreth
         else {
             display.textContent = result.toFixed(2);
+            equation = result.toFixed(2);
         }                
     }
 
